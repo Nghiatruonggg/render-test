@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf dist && cd ../part2-notes-frontend && npm run build && cp -r dist ../part3",
+    "deploy:full": "npm run build:ui && git add . && git commit -m 'deploy new build' && git push"
   },
   "author": "Minh",
   "license": "ISC",
